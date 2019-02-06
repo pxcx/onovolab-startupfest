@@ -1,0 +1,43 @@
+.app-header{
+   position: fixed;
+   z-index: 1;
+   width: 100%;
+   padding: 0 20px;
+ }
+
+ .app-header .logo-desktop{
+   height: 32px;
+   width: auto;
+   margin-right: 15px;
+ }
+
+ .app-header .logo-mobile{
+   height: 32px;
+   width: auto;
+   margin: 16px 0;
+   float: right;
+ }
+
+ .app-header .menu-container{
+   max-width: 1920px;
+   margin: auto;
+   background: red;
+ }
+
+ .app-header .menu-desktop{
+   display: inline-block;
+   line-height: 64px;
+ }
+
+ .app-header .menu-mobile{
+   width: 150px;
+   line-height: 64px;
+}
+
+.app-header .menu-mobile .icon .app-header .menu-desktop .icon{
+   font-size: 16px;
+}
+
+.app-header .menu-mobile .icon-lg .app-header .menu-desktop .icon-lg{
+   font-size: 20px;
+}
