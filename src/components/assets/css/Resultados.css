@@ -1,0 +1,21 @@
+
+.card-desktop .place,
+.card-mobile .place{
+  text-align: center;
+}
+
+.card-desktop .photo,
+.card-mobile .photo{
+  margin: 0 10px;
+}
+
+.card-desktop .name,
+.card-mobile .name{
+  margin-bottom: 0;
+  margin-top: -5px;
+}
+
+.card-desktop .rate,
+.card-mobile .rate{
+  font-size: 12px;
+}
