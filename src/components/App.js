@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import  { Layout } from 'antd';
-import { BrowserRouter } from 'react-router-dom'
+import { BrowserRouter } from 'react-router-dom';
+import { ApolloProvider } from 'react-apollo';
+import apolloClient from '../services/apollo.js';
 // components
 import AppMenu from './AppMenu';
 import AppContent from './AppContent';
@@ -19,6 +21,11 @@ class App extends Component {
 
   // componente montado
   componentDidMount() {
+    // iniciando o array de votos no local storage
+    if(!localStorage.getItem('votos')){
+      localStorage.setItem('votos', JSON.stringify([]))
+    }
+    // setando evento para atualizar a largura
     window.addEventListener('resize', this.updateWindowWidth);
   }
 
@@ -37,13 +44,15 @@ class App extends Component {
     const desktop = (this.state.width >= 495) ? true : false;
  
     return (
-      <BrowserRouter>
-        <Layout>
-          <AppMenu desktop={desktop} />
-          <AppContent desktop={desktop} />
-          <AppFooter />
-        </Layout>
-      </BrowserRouter>
+      <ApolloProvider client={apolloClient}>
+        <BrowserRouter>
+          <Layout>
+            <AppMenu desktop={desktop} />
+            <AppContent desktop={desktop} />
+            <AppFooter />
+          </Layout>
+        </BrowserRouter>
+      </ApolloProvider>
     );
   }
 }
