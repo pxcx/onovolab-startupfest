@@ -1,0 +1,26 @@
+.vote{
+    margin-left: 15px;
+    margin-top: -5px;
+}
+
+.vote .rate{
+    font-size: 16px;
+    margin-top: -5px;
+}
+
+
+.vote .label{
+    font-size: 12px;
+}
+
+.marginTop{
+    margin-top: 10px;
+}
+
+.ant-card-actions{
+    display: none;
+}
+
+.display-actions{
+    display: block;
+}

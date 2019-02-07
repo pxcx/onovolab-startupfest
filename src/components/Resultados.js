@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Row, Col, Card, Avatar, Rate } from 'antd';
 // assets
+import './assets/css/AppContent.css';
 import './assets/css/Resultados.css';
 
 class Resultados extends Component {

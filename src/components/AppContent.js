@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import  { Layout } from 'antd';
 import { Switch, Route } from 'react-router-dom'
 // components
-import Votacao from './Votacao';
+import Avaliacao from './Avaliacao';
 import Resultados from './Resultados';
 
 // assets
@@ -16,7 +16,7 @@ class AppContent extends Component {
     return (
       <Content className="app-content">
         <Switch>
-          <Route path="/" exact={true} render={()=><Votacao desktop={this.props.desktop} />} />
+          <Route path="/" exact={true} render={()=><Avaliacao desktop={this.props.desktop} />} />
           <Route path="/resultados" render={()=><Resultados desktop={this.props.desktop} />} />
         </Switch>
       </Content>
