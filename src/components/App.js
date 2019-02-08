@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import  { Layout } from 'antd';
 import { BrowserRouter } from 'react-router-dom';
 import { ApolloProvider } from 'react-apollo';
+// services
 import apolloClient from '../services/apollo.js';
 // components
 import AppMenu from './AppMenu';

@@ -5,6 +5,8 @@ import gql from 'graphql-tag';
 // assets
 import './assets/css/AppContent.css';
 import './assets/css/Avaliacao.css';
+// services
+import firestoreClient from '../services/firestore.js'
 
 class Avaliacao extends Component {
   constructor(props){
@@ -80,16 +82,22 @@ class Avaliacao extends Component {
     })
   }
 
-  confirmVote(startup){
+  async confirmVote(startup){
+    // atualizando o array de votos
     const votes = Array.from(JSON.parse(localStorage.getItem('votos')))
+    let voteObj = { }
     this.state.datasource.forEach(reg => {
       if(reg.startup === startup) {
-        votes.push(Object.assign({}, reg, {computado: true}))
+        voteObj = Object.assign({}, reg, {computado: true})
+        votes.push(Object.assign({}, voteObj))
       }
     })
     localStorage.setItem('votos', JSON.stringify(votes))
-    console.log('votos atualizados para: ', votes)
-    console.log('Seu voto: ', this.state.vote, ' foi salvo no firestore! eh verdade essa msg!')
+
+    // salvando o voto no firestore
+    firestoreClient.setVote(startup, voteObj.imageUrl, voteObj.proposta, voteObj.apresentacao, voteObj.desenvolvimento);
+
+    // atualizando os botoes e o datasource
     document.querySelector('.ant-card-actions').style.display = 'none'
     this.updateDatasource()
   }
@@ -112,11 +120,10 @@ class Avaliacao extends Component {
     this.updateDatasource()
   }
 
+  // render
   render() {
     const { loading } = this.props.startups
     const datasource = (loading) ? [0,1,2] : Array.from(this.state.datasource)
-
-    console.log('datasource: ', this.state.datasource)
     
     return (
       <div className="wrapper">
