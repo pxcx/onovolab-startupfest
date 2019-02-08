@@ -155,7 +155,7 @@ class Avaliacao extends Component {
                         <Rate allowHalf value={startup.apresentacao} className="rate" onChange={val => this.handleVote(val, 'apresentacao', startup.startup)} />
                       </div>
                       <div>
-                        <span className="subtitlelabel">Desenvolvimento<br/></span>
+                        <span className="subtitle label">Desenvolvimento<br/></span>
                         <Rate allowHalf value={startup.desenvolvimento} className="rate" onChange={val => this.handleVote(val, 'desenvolvimento', startup.startup)} />
                       </div>
                     </Col>

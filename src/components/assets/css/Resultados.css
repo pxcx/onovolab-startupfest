@@ -1,21 +1,26 @@
 
-.card-desktop .place,
-.card-mobile .place{
+.resultados .place{
   text-align: center;
 }
 
-.card-desktop .photo,
-.card-mobile .photo{
+.resultados .photo{
   margin: 0 10px;
 }
 
-.card-desktop .name,
-.card-mobile .name{
+.resultados .name{
   margin-bottom: 0;
   margin-top: -5px;
 }
 
-.card-desktop .rate,
-.card-mobile .rate{
-  font-size: 12px;
+.resultados .rate{
+  font-size: 14px;
+}
+
+.resultados .loading{
+  font-size: 64px;
+  margin: 10px;
+}
+
+.resultados .loading-container{
+  text-align: center;
 }
