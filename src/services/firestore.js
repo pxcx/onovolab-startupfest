@@ -4,7 +4,7 @@ import 'firebase/firestore'
 class Firestore {
   constructor(){
     const config = {
-      apiKey: "AIzaSyD0ZMih7VrTIGtvtJxCYeXsgv-rwaUEsrk",
+      apiKey: "API_KEY",
       authDomain: "startupfest-39ec3.firebaseapp.com",
       databaseURL: "https://startupfest-39ec3.firebaseio.com",
       projectId: "startupfest-39ec3",
