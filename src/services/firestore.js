@@ -5,11 +5,11 @@ class Firestore {
   constructor(){
     const config = {
       apiKey: "API_KEY",
-      authDomain: "startupfest-39ec3.firebaseapp.com",
-      databaseURL: "https://startupfest-39ec3.firebaseio.com",
-      projectId: "startupfest-39ec3",
-      storageBucket: "startupfest-39ec3.appspot.com",
-      messagingSenderId: "23016669944"
+      authDomain: "AUTH_DOMAIN",
+      databaseURL: "DB_URL",
+      projectId: "PROJECT_ID",
+      storageBucket: "BUCKET",
+      messagingSenderId: "SENDER_ID"
     };
     firebase.initializeApp(config);
     
